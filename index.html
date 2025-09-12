@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Djerhy Jn Baptiste</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: #e6f0fa;
+      color: #333333;
+      margin: 0;
+      padding: 0 20px;
+      line-height: 1.8;
+    }
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    header img {
+      border-radius: 50% 50% 20% 20%; /* Vertical elongated oval crop */
+      width: 200px;
+      height: 250px; /* Increased height for more vertical space */
+      object-fit: cover;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    header img:hover {
+      transform: scale(1.05);
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+      color: #2f81f7;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    header p {
+      font-size: 1.2em;
+      color: #666666;
+      margin: 10px 0;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    nav {
+      background-color: #2f81f7;
+      padding: 15px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 500;
+      font-size: 1.1em;
+      padding: 5px 10px;
+      transition: background-color 0.3s;
+    }
+    nav a:hover {
+      background-color: #e6f0fa;
+      color: #2f81f7;
+      border-radius: 3px;
+      text-decoration: none;
+    }
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 50px 20px;
+      background-color: #ffffff;
+      border-top: 1px solid #e0e0e0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+    section h2 {
+      font-size: 2em;
+      border-bottom: 2px solid #2f81f7;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      color: #2f81f7;
+      font-weight: 700;
+    }
+    section h2:before {
+      content: "✔ ";
+      color: #2f81f7;
+    }
+    section h3 {
+      font-size: 1.5em;
+      color: #444444;
+      margin-top: 20px;
+    }
+    section h3:before {
+      content: "➤ ";
+      color: #2f81f7;
+    }
+    section p, section ul {
+      font-size: 1.1em;
+      color: #666666;
+    }
+    section ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+    section ul li {
+      margin: 10px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+    section ul li:before {
+      content: "•";
+      color: #2f81f7;
+      position: absolute;
+      left: 0;
+    }
+    .button, .social-button {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #2f81f7;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 10px 5px;
+      border: 1px solid #1a5cd7;
+      transition: all 0.3s;
+      font-weight: 500;
+      font-size: 1em;
+      text-align: center;
+    }
+    .button:hover, .social-button:hover {
+      background-color: #1a5cd7;
+      transform: translateY(-2px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .social-button img {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f1f1f1;
+      color: #333333;
+      font-size: 0.9em;
+      border-top: 1px solid #e0e0e0;
+    }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header img {
+        width: 150px;
+        height: 180px; /* Adjusted height for mobile */
+      }
+      nav a {
+        margin: 0 10px;
+        display: block;
+        padding: 10px 0;
+      }
+      nav {
+        padding: 10px 0;
+      }
+      section {
+        margin: 20px auto;
+        padding: 30px 15px;
+      }
+      .button, .social-button {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+      }
+      .social-button img {
+        margin-right: 0;
+        margin-bottom: 5px;
+      }
+    }
+    /* Accessibility */
+    a:focus {
+      outline: 2px solid #ffcc00;
+      outline-offset: 2px;
+    }
+    img {
+      alt: "Profile Image of Djerhy Jn Baptiste";
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="IMG_4115.PNG" alt="Profile Image of Djerhy Jn Baptiste">
+    <h1>Djerhy Jn Baptiste</h1>
+    <p>Cloud & Security Professional | CISSP • AWS SysOps • CompTIA x 7</p>
+    <p>Exploring opportunities in cloud strategy, cybersecurity, and digital learning.</p>
+    <a href="Djerhy Jn Baptiste Resume 25.pdf" class="button" download>Download My Resume</a>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#resources">Resources</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I help organizations make sense of risk in complex technical environments, bridging cloud infrastructure, cybersecurity, and governance. My work focuses on visibility, control, and compliance, whether I’m assessing assets, supporting provisioning, or designing frameworks that reduce governance debt.</p>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <h3>Security & Governance</h3>
+    <ul>
+      <li>CISSP – ISC2</li>
+      <li>CompTIA Security+</li>
+      <li>Google Cybersecurity Certificate</li>
+      <li>ITIL Foundation</li>
+    </ul>
+    <h3>Cloud & Systems</h3>
+    <ul>
+      <li>AWS Certified SysOps Administrator</li>
+      <li>AWS Cloud Practitioner</li>
+      <li>CompTIA Cloud+</li>
+      <li>LPI Linux Essentials</li>
+    </ul>
+    <h3>Core IT & Instruction</h3>
+    <ul>
+      <li>CompTIA A+</li>
+      <li>CompTIA Network+</li>
+      <li>CompTIA Project+</li>
+      <li>CompTIA PenTest+</li>
+      <li>Google IT Support Certificate</li>
+    </ul>
+    <p><a href="https://www.credly.com/users/djerhy-jn-baptiste" class="button">View all verified certifications on Credly</a></p>
+  </section>
+
+  <section id="resources">
+    <h2>Resources</h2>
+    <p><a href="asset-walkthrough.pdf" class="button" download>Download AssetHunt Template</a></p>
+    <p><a href="Week One Security Assessment Framework.pdf" class="button" download>Download Security Framework</a></p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📧 <a href="mailto:djerhy.jnbaptiste@gmail.com">djerhy.jnbaptiste@gmail.com</a></p>
+    <p>
+      <a href="https://www.linkedin.com/in/djerhy-jn-baptiste" class="social-button"><img src="linkedin.png" alt="LinkedIn Logo">LinkedIn</a>
+      <a href="https://github.com/djerhy" class="social-button"><img src="github.png" alt="GitHub Logo">GitHub</a>
+      <a href="https://x.com/djerhy" class="social-button"><img src="x.png" alt="X Logo">X</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Djerhy Jn Baptiste | Site built with simplicity and clarity.</p>
+  </footer>
+</body>
+</html>
