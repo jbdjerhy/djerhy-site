@@ -4,261 +4,368 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Djerhy Jn Baptiste</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      background-color: #e6f0fa;
-      color: #333333;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #F5F7FA 0%, #EAF2FB 100%);
+      color: #2C2F33;
       margin: 0;
-      padding: 0 20px;
-      line-height: 1.8;
+      padding: 0;
+      overflow-x: hidden;
     }
-    header {
-      text-align: center;
-      padding: 40px 20px;
-      background-color: #ffffff;
+    .navbar {
+      background-color: #0D1117;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      position: relative;
+      position: sticky;
+      top: 0;
+      z-index: 1001;
+      transition: all 0.3s ease;
     }
-    header img {
-      border-radius: 50% 50% 20% 20%; /* Vertical elongated oval crop */
-      width: 200px;
-      height: 250px; /* Increased height for more vertical space */
+    .navbar-item {
+      color: #F5F7FA;
+      padding: 0.75rem 1rem;
+    }
+    .navbar-item:hover {
+      background-color: #2F81F7;
+      color: #F5F7FA;
+      border-radius: 3px;
+    }
+    .navbar-burger {
+      color: #F5F7FA;
+    }
+    .section {
+      padding: 2rem 1.5rem;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.05"><path d="M10 10 L90 90 M10 90 L90 10" stroke="%232F81F7" stroke-width="0.5"/></svg>') repeat;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .hero {
+      background-color: #F5F7FA;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .hero img {
+      border-radius: 50%;
+      width: 390px;
+      height: 400px;
       object-fit: cover;
-      margin-bottom: 20px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s;
     }
-    header img:hover {
+    .hero img:hover {
       transform: scale(1.05);
     }
-    header h1 {
-      font-size: 2.5em;
-      margin: 0;
-      color: #2f81f7;
+    @media (max-width: 768px) {
+      .hero img {
+        width: 290px;
+        height: 300px;
+      }
+    }
+    .title {
+      color: #0D1117;
       font-weight: 700;
-      letter-spacing: 1px;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
-    header p {
-      font-size: 1.2em;
-      color: #666666;
-      margin: 10px 0;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+    .subtitle {
+      color: #2C2F33;
+      font-size: 1.25rem;
     }
-    nav {
-      background-color: #2f81f7;
-      padding: 15px 0;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+    .card {
+      background-color: #F5F7FA;
+      border: 1px solid #2F81F7;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
     }
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      margin: 0 20px;
-      font-weight: 500;
-      font-size: 1.1em;
-      padding: 5px 10px;
-      transition: background-color 0.3s;
-    }
-    nav a:hover {
-      background-color: #e6f0fa;
-      color: #2f81f7;
-      border-radius: 3px;
-      text-decoration: none;
-    }
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 50px 20px;
-      background-color: #ffffff;
-      border-top: 1px solid #e0e0e0;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      position: relative;
-    }
-    section h2 {
-      font-size: 2em;
-      border-bottom: 2px solid #2f81f7;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-      color: #2f81f7;
-      font-weight: 700;
-    }
-    section h2:before {
-      content: "✔ ";
-      color: #2f81f7;
-    }
-    section h3 {
-      font-size: 1.5em;
-      color: #444444;
-      margin-top: 20px;
-    }
-    section h3:before {
-      content: "➤ ";
-      color: #2f81f7;
-    }
-    section p, section ul {
-      font-size: 1.1em;
-      color: #666666;
-    }
-    section ul {
-      list-style: none;
-      padding: 0;
-      display: grid;
-      gap: 10px;
-    }
-    section ul li {
-      margin: 10px 0;
-      padding-left: 20px;
-      position: relative;
-    }
-    section ul li:before {
-      content: "•";
-      color: #2f81f7;
-      position: absolute;
-      left: 0;
-    }
-    .button, .social-button {
-      display: inline-block;
-      padding: 12px 25px;
-      background-color: #2f81f7;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 5px;
-      margin: 10px 5px;
+    .button {
+      background-color: #2F81F7;
       border: 1px solid #1a5cd7;
+      color: #F5F7FA;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
       transition: all 0.3s;
-      font-weight: 500;
-      font-size: 1em;
-      text-align: center;
     }
-    .button:hover, .social-button:hover {
+    .button:hover {
       background-color: #1a5cd7;
       transform: translateY(-2px);
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .social-button {
+      background-color: transparent;
+      border: 2px solid #2F81F7;
+      color: #2F81F7;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem;
+      border-radius: 5px;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+    }
+    .social-button:hover {
+      background-color: #2F81F7;
+      color: #F5F7FA;
+      transform: translateY(-2px);
     }
     .social-button img {
       width: 24px;
       height: 24px;
       vertical-align: middle;
-      margin-right: 8px;
+      margin-right: 0.5rem;
     }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #f1f1f1;
-      color: #333333;
-      font-size: 0.9em;
-      border-top: 1px solid #e0e0e0;
+    .hero .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
     }
-    /* Responsive Design */
     @media (max-width: 768px) {
-      header img {
-        width: 150px;
-        height: 180px; /* Adjusted height for mobile */
+      .hero .buttons {
+        flex-direction: column;
+        gap: 0.5rem;
       }
-      nav a {
-        margin: 0 10px;
+    }
+    #takes-window {
+      height: 300px;
+      overflow-y: auto;
+      padding: 1rem;
+    }
+    #takes-window a {
+      color: #2F81F7;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    #takes-window a:hover {
+      text-decoration: underline;
+    }
+    .accordion {
+      background-color: #2F81F7;
+      color: #F5F7FA;
+      border: none;
+      width: 100%;
+      text-align: center;
+      padding: 0.75rem;
+      cursor: pointer;
+      font-size: 1.5rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s;
+    }
+    .accordion:hover {
+      background-color: #1a5cd7;
+      transform: scale(1.05);
+    }
+    .accordion-content {
+      display: none;
+      padding: 1rem;
+    }
+    .accordion-content.show {
+      display: block;
+    }
+    .footer {
+      background: linear-gradient(180deg, #0D1117 0%, #2C2F33 100%);
+      color: #F5F7FA;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .footer a {
+      color: #2F81F7;
+      transition: color 0.3s;
+    }
+    .footer a:hover {
+      color: #1a5cd7;
+    }
+    @media (max-width: 768px) {
+      .navbar-menu {
+        background-color: #0D1117;
+      }
+      .navbar-item {
         display: block;
-        padding: 10px 0;
-      }
-      nav {
-        padding: 10px 0;
-      }
-      section {
-        margin: 20px auto;
-        padding: 30px 15px;
+        padding: 0.75rem;
       }
       .button, .social-button {
-        display: block;
         width: 100%;
-        text-align: center;
-        margin: 10px 0;
+        margin: 0.5rem 0;
       }
       .social-button img {
-        margin-right: 0;
-        margin-bottom: 5px;
+        margin-bottom: 0.25rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
       }
-    }
-    /* Accessibility */
-    a:focus {
-      outline: 2px solid #ffcc00;
-      outline-offset: 2px;
-    }
-    img {
-      alt: "Profile Image of Djerhy Jn Baptiste";
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="IMG_4115.PNG" alt="Profile Image of Djerhy Jn Baptiste">
-    <h1>Djerhy Jn Baptiste</h1>
-    <p>Cloud & Security Professional | CISSP • AWS SysOps • CompTIA x 7</p>
-    <p>Exploring opportunities in cloud strategy, cybersecurity, and digital learning.</p>
-    <a href="Djerhy Jn Baptiste Resume 25.pdf" class="button" download>Download My Resume</a>
-  </header>
-
-  <nav>
-    <a href="#about">About</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#resources">Resources</a>
-    <a href="#contact">Contact</a>
+  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="#about">About</a>
+        <a class="navbar-item" href="#certifications">Certifications</a>
+        <a class="navbar-item" href="#resources">Resources</a>
+        <a class="navbar-item" href="#contact">Contact</a>
+      </div>
+    </div>
   </nav>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I help organizations make sense of risk in complex technical environments, bridging cloud infrastructure, cybersecurity, and governance. My work focuses on visibility, control, and compliance, whether I’m assessing assets, supporting provisioning, or designing frameworks that reduce governance debt.</p>
+  <section class="hero" id="hero">
+    <div class="container">
+      <img src="IMG_4115.PNG" alt="Profile Image of Djerhy Jn Baptiste">
+      <h1 class="title">Djerhy Jn Baptiste</h1>
+      <p class="subtitle">Cloud, Security & GRC Strategy Professional</p>
+      <p class="subtitle">Helping organizations reduce governance debt through cloud, security, and risk visibility</p>
+      <div class="buttons">
+        <a href="Djerhy Jn Baptiste Resume 25.pdf" class="button" download>Download My Resume</a>
+        <a href="#contact" class="button">Contact Me</a>
+      </div>
+    </div>
   </section>
 
-  <section id="certifications">
-    <h2>Certifications</h2>
-    <h3>Security & Governance</h3>
-    <ul>
-      <li>CISSP – ISC2</li>
-      <li>CompTIA Security+</li>
-      <li>Google Cybersecurity Certificate</li>
-      <li>ITIL Foundation</li>
-    </ul>
-    <h3>Cloud & Systems</h3>
-    <ul>
-      <li>AWS Certified SysOps Administrator</li>
-      <li>AWS Cloud Practitioner</li>
-      <li>CompTIA Cloud+</li>
-      <li>LPI Linux Essentials</li>
-    </ul>
-    <h3>Core IT & Instruction</h3>
-    <ul>
-      <li>CompTIA A+</li>
-      <li>CompTIA Network+</li>
-      <li>CompTIA Project+</li>
-      <li>CompTIA PenTest+</li>
-      <li>Google IT Support Certificate</li>
-    </ul>
-    <p><a href="https://www.credly.com/users/djerhy-jn-baptiste" class="button">View all verified certifications on Credly</a></p>
+  <section class="section" id="about">
+    <div class="container">
+      <div class="card">
+        <h1 class="title is-2">About Me</h1>
+        <p>I help organizations make sense of risk in complex technical environments, bridging cloud infrastructure, cybersecurity, and governance. My work focuses on visibility, control, and compliance, whether I’m assessing assets, supporting provisioning, or designing frameworks that reduce governance debt.</p>
+      </div>
+    </div>
   </section>
 
-  <section id="resources">
-    <h2>Resources</h2>
-    <p><a href="asset-walkthrough.pdf" class="button" download>Download AssetHunt Template</a></p>
-    <p><a href="Week One Security Assessment Framework.pdf" class="button" download>Download Security Framework</a></p>
+  <section class="section" id="certifications">
+    <div class="container">
+      <button class="accordion">View Certifications ▾</button>
+      <div class="accordion-content">
+        <h2 class="subtitle is-4">Security & Governance</h2>
+        <ul>
+          <li>CISSP – ISC2</li>
+          <li>CompTIA Security+</li>
+          <li>Google Cybersecurity Certificate</li>
+          <li>ITIL Foundation</li>
+        </ul>
+        <h2 class="subtitle is-4">Cloud & Systems</h2>
+        <ul>
+          <li>AWS Certified SysOps Administrator</li>
+          <li>AWS Cloud Practitioner</li>
+          <li>CompTIA Cloud+</li>
+          <li>LPI Linux Essentials</li>
+        </ul>
+        <h2 class="subtitle is-4">Core IT & Instruction</h2>
+        <ul>
+          <li>CompTIA A+</li>
+          <li>CompTIA Network+</li>
+          <li>CompTIA Project+</li>
+          <li>CompTIA PenTest+</li>
+          <li>Google IT Support Certificate</li>
+        </ul>
+        <p><a href="https://www.credly.com/users/djerhy-jn-baptiste" class="button">View all verified certifications on Credly</a></p>
+      </div>
+    </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>📧 <a href="mailto:djerhy.jnbaptiste@gmail.com">djerhy.jnbaptiste@gmail.com</a></p>
-    <p>
-      <a href="https://www.linkedin.com/in/djerhy-jn-baptiste" class="social-button"><img src="linkedin.png" alt="LinkedIn Logo">LinkedIn</a>
-      <a href="https://github.com/djerhy" class="social-button"><img src="github.png" alt="GitHub Logo">GitHub</a>
-      <a href="https://x.com/djerhy" class="social-button"><img src="x.png" alt="X Logo">X</a>
-    </p>
+  <section class="section" id="latest-takes">
+    <div class="container">
+      <h1 class="title is-2">Read Top Takes</h1>
+      <div class="card" id="takes-window">
+        <!-- Links will be injected here by JavaScript -->
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>© 2025 Djerhy Jn Baptiste | Site built with simplicity and clarity.</p>
+  <section class="section" id="resources">
+    <div class="container">
+      <h1 class="title is-2">Resources</h1>
+      <div class="buttons">
+        <a href="asset-walkthrough.pdf" class="button" download>Download AssetHunt Template</a>
+        <a href="Security Assessment Framework.pdf" class="button" download>Download Security Framework</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <h1 class="title is-2">Contact</h1>
+      <p>📧 <a href="mailto:djerhy.jnbaptiste@gmail.com">djerhy.jnbaptiste@gmail.com</a></p>
+      <div class="buttons">
+        <a href="https://www.linkedin.com/in/djerhy-jn-baptiste" class="social-button"><img src="Linkedin.jpg" alt="LinkedIn Logo">LinkedIn</a>
+        <a href="https://github.com/djerhy" class="social-button"><img src="Github.png" alt="GitHub Logo">GitHub</a>
+        <a href="https://x.com/djerhy" class="social-button"><img src="logo-black.png" alt="X Logo">X</a>
+      </div>
+      <a href="#contact" class="button mt-4">Let’s Connect</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>© 2025 Djerhy Jn Baptiste | <a href="#hero">Site built with simplicity and clarity</a></p>
+    </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Navbar burger
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      if ($navbarBurgers.length > 0) {
+        $navbarBurgers.forEach(el => {
+          el.addEventListener('click', () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+          });
+        });
+      }
+
+      // Accordion
+      const accordions = document.querySelectorAll('.accordion');
+      accordions.forEach(accordion => {
+        accordion.addEventListener('click', () => {
+          const content = accordion.nextElementSibling;
+          content.classList.toggle('show');
+          accordion.textContent = content.classList.contains('show') ? 'Hide Certifications ▴' : 'View Certifications ▾';
+        });
+      });
+
+      // Read Top Takes
+      fetch('top-takes.json')
+        .then(response => {
+          if (!response.ok) throw new Error('Network response was not ok');
+          return response.json();
+        })
+        .then(data => {
+          const takesWindow = document.getElementById('takes-window');
+          if (Array.isArray(data)) {
+            data.forEach(post => {
+              const link = document.createElement('a');
+              link.href = post.url;
+              link.textContent = post.title;
+              link.target = '_blank';
+              takesWindow.appendChild(link);
+              takesWindow.appendChild(document.createElement('br'));
+            });
+          } else {
+            takesWindow.textContent = 'Invalid data format in top-takes.json.';
+          }
+        })
+        .catch(error => {
+          console.error('Error loading top takes:', error);
+          document.getElementById('takes-window').textContent = 'Unable to load latest takes. Check back later.';
+        });
+    });
+  </script>
 </body>
 </html>
